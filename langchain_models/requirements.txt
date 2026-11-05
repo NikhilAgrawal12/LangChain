@@ -21,6 +21,7 @@ huggingface-hub
 # Environment Variable Management
 python-dotenv
 streamlit
+pydantic[email]
 
 # Machine Learning Utilities
 numpy
