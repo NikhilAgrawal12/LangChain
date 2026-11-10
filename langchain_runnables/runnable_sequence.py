@@ -22,5 +22,5 @@ parser = StrOutputParser()
 
 chain = RunnableSequence(prompt1,model,parser,prompt2,model,parser)
 
-print(chain.invoke({"topic": "AI"}))
+print(chain.invoke({"topic": "AI"}))  
 
