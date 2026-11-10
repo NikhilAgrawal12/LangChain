@@ -58,10 +58,10 @@ prompt3 = PromptTemplate(
 
 
 chain = (
-    RunnableParallel(
-        feedback=lambda x: x["feedback"],
-        sentiment=classifier_chain
-    )
+    RunnableParallel({
+    "feedback": RunnableLambda(lambda x: x["feedback"]),
+    "sentiment": classifier_chain
+    })
     | RunnableBranch(
         (lambda x: x["sentiment"].sentiment == "positive", prompt2 | model | parser),
         (lambda x: x["sentiment"].sentiment == "negative", prompt3 | model | parser),
