@@ -37,7 +37,5 @@ query = "How to improve energy levels and maintain balance?"
 
 results = multiquery_retriever.invoke(query)
 
-results = results[:5]
-
 for i,doc in enumerate(results):
     print(f"Result {i+1}: {doc.page_content} (Source: {doc.metadata['source']})")
